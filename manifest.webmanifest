@@ -1,0 +1,33 @@
+{
+  "name": "呼吸花园",
+  "short_name": "呼吸花园",
+  "description": "一次呼吸，种下一朵花。跟随花形呼吸口练习方块呼吸、4-7-8 与连贯呼吸，完成后在草地上种下一朵花。",
+  "lang": "zh-CN",
+  "start_url": "./breathing-garden.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#dcecf0",
+  "theme_color": "#3f8f5e",
+  "categories": ["health", "lifestyle", "medical"],
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

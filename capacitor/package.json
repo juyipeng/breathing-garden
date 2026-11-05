@@ -1,0 +1,19 @@
+{
+  "name": "breathing-garden",
+  "version": "1.0.0",
+  "description": "呼吸花园 · 跟随花形呼吸口练习呼吸，每次循环在草地上种下一朵花",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "private": true,
+  "dependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/cli": "^8.5.3",
+    "@capacitor/core": "^8.5.3"
+  }
+}

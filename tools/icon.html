@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>html,body{margin:0;overflow:hidden}</style></head>
+<body>
+<canvas id="c" width="512" height="512"></canvas>
+<script>
+/* 应用图标：与应用同一套造型（花形呼吸口 + 草甸天光）。
+   内容收在中心 80% 内，这样也满足 maskable 图标的安全区要求。 */
+(function () {
+  var S = 512, c = document.getElementById('c'), x = c.getContext('2d');
+
+  /* 天光草甸底 */
+  var g = x.createLinearGradient(0, 0, 0, S);
+  g.addColorStop(0,    '#8fc4e0');
+  g.addColorStop(0.46, '#dcecf0');
+  g.addColorStop(0.55, '#a8d48c');
+  g.addColorStop(1,    '#4f9a48');
+  x.fillStyle = g; x.fillRect(0, 0, S, S);
+
+  /* 远山 */
+  x.beginPath(); x.moveTo(0, S * 0.52);
+  x.quadraticCurveTo(S * 0.25, S * 0.44, S * 0.52, S * 0.52);
+  x.quadraticCurveTo(S * 0.78, S * 0.60, S, S * 0.50);
+  x.lineTo(S, S); x.lineTo(0, S); x.closePath();
+  x.fillStyle = 'rgba(120,168,140,.35)'; x.fill();
+
+  /* 呼吸口 */
+  function petal(len, wid) {
+    x.beginPath(); x.moveTo(0, 0);
+    x.bezierCurveTo( wid*1.18, -len*0.28,  wid*1.02, -len*0.76, 0, -len*0.94);
+    x.bezierCurveTo(-wid*1.02, -len*0.76, -wid*1.18, -len*0.28, 0, 0);
+    x.closePath();
+  }
+  var cx = S / 2, cy = S * 0.485, R = S * 0.185;   /* R 控制在中心 80% 内 */
+  var n = 10;
+  for (var i = 0; i < n; i++) {
+    var a = i / n * 6.283 - Math.PI / 2;
+    var tone = 1 + 0.11 * Math.cos(a + Math.PI * 1.25);
+    x.save(); x.translate(cx, cy); x.rotate(a);
+    x.fillStyle = 'rgba(' + Math.round(230*tone) + ',' + Math.round(164*tone) + ',' + Math.round(188*tone) + ',.92)';
+    petal(R * 1.24, R * 0.50);
+    x.fill(); x.restore();
+  }
+  var cg = x.createRadialGradient(cx - R*0.3, cy - R*0.3, 0, cx, cy, R * 0.62);
+  cg.addColorStop(0, 'rgba(252,242,246,.99)');
+  cg.addColorStop(0.55, 'rgba(230,164,188,.95)');
+  cg.addColorStop(1, 'rgba(188,104,138,.88)');
+  x.fillStyle = cg;
+  x.beginPath(); x.arc(cx, cy, R * 0.62, 0, 6.283); x.fill();
+
+  window.__iconReady = 1;
+})();
+</script>
+</body></html>

@@ -1,0 +1,38 @@
+# ── 依赖与构建产物 ─────────────────────────────────────────
+capacitor/node_modules/
+capacitor/android/.gradle/
+capacitor/android/build/
+capacitor/android/app/build/
+capacitor/android/capacitor-cordova-android-plugins/build/
+capacitor/android/local.properties
+
+# 由 build-apk.sh / cap sync 生成，源文件在仓库根目录
+capacitor/www/
+capacitor/android/app/src/main/assets/public/
+capacitor/android/app/src/main/assets/capacitor.config.json
+capacitor/android/app/src/main/assets/capacitor.plugins.json
+
+# ── 机器相关配置与密钥 ─────────────────────────────────────
+build.env
+tools/.env
+*.keystore
+*.jks
+
+# ── 本地草稿与研究资料（不随应用发布）──────────────────────
+# 早期音色对比，可用 sound-preview/generate.js 重新生成
+sound-preview/*.wav
+target/
+knowledge_bundle.md
+harvest_manifest.json
+修改意见.md
+mindfulness.html
+imgs/
+51e8918a64f5101da573a25296c049b7.png
+
+# ── 临时文件 ───────────────────────────────────────────────
+*.orig
+*.bak
+*.tmp
+*.log
+.DS_Store
+Thumbs.db

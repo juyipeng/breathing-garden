@@ -1,0 +1,8 @@
+* text=auto
+*.sh text eol=lf
+*.html text
+*.js text
+*.md text
+*.png binary
+*.apk binary
+*.wav binary
